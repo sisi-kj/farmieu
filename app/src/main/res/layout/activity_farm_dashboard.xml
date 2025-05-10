@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E6F4E4">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center_horizontal">
+
+        <!-- 로고 -->
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/logo"
+            android:layout_marginBottom="16dp"
+            android:contentDescription="팜이요 로고" />
+
+        <!-- 팜 이름 -->
+        <TextView
+            android:id="@+id/tvFarmName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#3E803F"
+            android:fontFamily="@font/gowun_batang_regular"/>
+
+        <ImageView
+            android:id="@+id/imgLatestPhoto"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="24dp"
+            android:scaleType="centerCrop"
+            android:contentDescription="최근 사진"
+            android:src="@drawable/placeholder" />
+
+
+
+
+        <!--        android:text="내 스마트팜"-->
+        <!-- 예: 온도 센서 -->
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:gravity="center_vertical"-->
+<!--            android:layout_marginBottom="24dp">-->
+
+<!--&lt;!&ndash;            <ImageView&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_width="40dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_height="40dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:src="@drawable/ic_temperature"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:contentDescription="온도 아이콘" />&ndash;&gt;-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tvTemperature"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="온도: &#45;&#45;°C"-->
+<!--                android:textSize="18sp"-->
+<!--                android:textStyle="bold"-->
+<!--                android:textColor="#333"-->
+<!--                android:layout_marginBottom="8dp"/>-->
+
+<!--            <ProgressBar-->
+<!--                android:id="@+id/pbTemperature"-->
+<!--                style="?android:attr/progressBarStyleHorizontal"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="20dp"-->
+<!--                android:max="50"-->
+<!--                android:progress="0"-->
+<!--                android:layout_weight="1"-->
+<!--                android:layout_marginStart="16dp"-->
+<!--                android:progressTint="#90CAF9"-->
+<!--                android:backgroundTint="#EEEEEE" />-->
+
+<!--        </LinearLayout>-->
+
+        <!-- 다른 센서도 같은 구조로 복사해서 배치 가능 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="24dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp">
+
+            <TextView
+                android:id="@+id/tvPumpStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="펌프 상태: --"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#333"
+                android:layout_gravity="center_vertical"
+                android:fontFamily="@font/gowun_batang_regular" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/btnPumpIndicator"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="상태"
+                android:enabled="false"
+                android:backgroundTint="#CCCCCC"
+                android:layout_gravity="center_vertical"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#333"
+                android:fontFamily="@font/gowun_batang_regular"/>
+        </LinearLayout>
+
+
+        <!-- 🌡️ 온도 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="24dp"
+            >
+
+            <TextView
+                android:id="@+id/tvTemperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="온도: --°C"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#333"
+                android:fontFamily="@font/gowun_batang_regular"/>
+
+            <ProgressBar
+                android:id="@+id/pbTemperature"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_weight="1"
+                android:layout_marginStart="16dp"
+                android:max="50"
+                android:progress="0"
+                android:progressTint="#90CAF9"
+                android:backgroundTint="#EEEEEE" />
+        </LinearLayout>
+
+        <!-- 💧 습도 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="24dp">
+
+            <TextView
+                android:id="@+id/tvHumidity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="습도: --%"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#333"
+                android:fontFamily="@font/gowun_batang_regular"/>
+
+            <ProgressBar
+                android:id="@+id/pbHumidity"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_weight="1"
+                android:layout_marginStart="16dp"
+                android:max="100"
+                android:progress="0"
+                android:progressTint="#64B5F6"
+                android:backgroundTint="#EEEEEE" />
+        </LinearLayout>
+
+
+        <!-- 🌱 토양 수분 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="24dp">
+
+            <TextView
+                android:id="@+id/tvSoil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="토양 수분: --%"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#333"
+                android:fontFamily="@font/gowun_batang_regular"/>
+
+            <ProgressBar
+                android:id="@+id/pbSoil"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_weight="1"
+                android:layout_marginStart="16dp"
+                android:max="100"
+                android:progress="0"
+                android:progressTint="#81C784"
+                android:backgroundTint="#EEEEEE" />
+        </LinearLayout>
+
+        <!-- 💡 조도 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="24dp">
+
+            <TextView
+                android:id="@+id/tvLight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="조도: --lx"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#333"
+                android:fontFamily="@font/gowun_batang_regular"/>
+
+            <ProgressBar
+                android:id="@+id/pbLight"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_weight="1"
+                android:layout_marginStart="16dp"
+                android:max="100"
+                android:progress="0"
+                android:progressTint="#BDBDBD"
+                android:backgroundTint="#EEEEEE" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="end"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp">
+
+            <Button
+                android:id="@+id/btnLogout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="로그아웃"
+                android:backgroundTint="#E6F4E4"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#333"
+                android:fontFamily="@font/gowun_batang_regular"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+</ScrollView>

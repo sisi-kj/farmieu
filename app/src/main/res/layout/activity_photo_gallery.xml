@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E6F4E4">>
+
+    <LinearLayout
+        android:id="@+id/galleryLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:textColor="#3E803F"
+        android:fontFamily="@font/gowun_batang_regular">
+
+        <TextView
+            android:id="@+id/tvSelectedTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="선택된 시간: 08:00"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="12dp"
+            android:textColor="#3E803F"
+            android:fontFamily="@font/gowun_batang_regular"/>
+
+        <Button
+            android:id="@+id/btnPickTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="시간 선택"
+            android:textColor="#3E803F"
+            android:backgroundTint="#E6F4E4"
+            android:fontFamily="@font/gowun_batang_regular"/>
+
+        <Button
+            android:id="@+id/btnSaveTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="저장 시간 적용"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="24dp"
+            android:backgroundTint="#E6F4E4"
+            android:textColor="#3E803F"
+            android:fontFamily="@font/gowun_batang_regular"/>
+
+        <!-- 이미지들이 여기에 쌓임 -->
+<!--        <LinearLayout-->
+<!--            android:id="@+id/galleryLayout"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="vertical"-->
+<!--            android:divider="?android:attr/dividerHorizontal"-->
+<!--            android:showDividers="middle"-->
+<!--            android:dividerPadding="8dp" />-->
+    </LinearLayout>
+
+
+
+
+</ScrollView>
+

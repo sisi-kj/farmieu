@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#E6F4E4"
+    android:padding="32dp">
+    <ImageView
+        android:id="@+id/logoImage"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/logo"
+        android:layout_marginBottom="24dp"
+        android:contentDescription="팜이요 로고" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="팜 이름을 입력해주세요"
+        android:textSize="20sp"
+        android:layout_marginBottom="24dp"
+        android:textStyle="bold"
+        android:textColor="#3E803F"
+        android:fontFamily="@font/gowun_batang_regular"/>
+
+    <EditText
+        android:id="@+id/etFarmName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="예: 경기도 고양 스마트팜"
+        android:layout_marginBottom="24dp"
+        android:textStyle="bold"
+        android:textColorHint="#A67F59"
+        android:textColor="#3E803F"
+        android:fontFamily="@font/gowun_batang_regular"/>
+        />
+
+    <Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="등록하기"
+        android:backgroundTint="#63B7B7"
+        android:textColor="#FFFFFF"/>
+</LinearLayout>

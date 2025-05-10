@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">farm__</string>
+    <string name="default_web_client_id">[Firebase 콘솔의 웹 클라이언트 ID]</string>
+
+</resources>
