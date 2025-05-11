@@ -389,7 +389,7 @@ private fun startPollingLatestPhoto() {
                     }
                 }
 
-            handler.postDelayed(this, 5 * 60 * 1000)
+            handler.postDelayed(this, 30 * 1000)
         }
     }
 
