@@ -132,10 +132,12 @@ class SignUpActivity : AppCompatActivity() {
                             "email" to email,
                             "farmName" to farmName,
                             "createdAt" to System.currentTimeMillis(),
-                            "temperature" to 0,
                             "humidity" to 0,
+                            "light" to 0,
                             "soilMoisture" to 0,
-                            "light" to 0
+                            "temperature" to 0,
+                            "photoTime" to "05:00",
+                            "pumpStatus" to "off"
                         )
 
                         // 🔴 문서 ID를 이메일로 지정해서 저장 (랜덤 ID 방지)

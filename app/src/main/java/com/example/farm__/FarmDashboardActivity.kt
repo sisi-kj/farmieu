@@ -309,22 +309,23 @@ class FarmDashboardActivity : AppCompatActivity() {
         pbTemperature.progressTintList = ColorStateList.valueOf(color)
     }
     private fun updateHumidityUI(value: Double) {
-        val percent = value.toInt().coerceIn(0, 100)
-        pbHumidity.progress = percent
-        tvHumidity.text = "습도: ${percent}%"
+        val clamped = value.coerceIn(0.0, 100.0)
+        pbHumidity.progress = clamped.toInt()
+        tvHumidity.text = "습도: %.1f%%".format(clamped)
 
-        // 습도가 높을수록 진한 파란색
-        val alpha = (percent * 255 / 100).coerceIn(0, 255)
+        val alpha = (clamped * 255 / 100).toInt().coerceIn(0, 255)
         val color = Color.argb(255, 0, 105, alpha)
         pbHumidity.progressTintList = ColorStateList.valueOf(color)
     }
 
+
     private fun updateSoilUI(value: Double) {
-        val percent = value.toInt().coerceIn(0, 100)
-        pbSoil.progress = percent
-        tvSoil.text = "토양 수분: ${percent}%"
-        pbSoil.progressTintList = ColorStateList.valueOf(Color.parseColor("#8BC34A")) // 초록 계열 고정
+        val clamped = value.coerceIn(0.0, 100.0)
+        pbSoil.progress = clamped.toInt()
+        tvSoil.text = "토양 수분: %.1f%%".format(clamped)
+        pbSoil.progressTintList = ColorStateList.valueOf(Color.parseColor("#8BC34A"))
     }
+
 
     private fun updateLightUI(value: Double) {
         val lx = value.toInt().coerceIn(0, 1000)
