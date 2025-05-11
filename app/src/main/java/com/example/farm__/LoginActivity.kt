@@ -146,6 +146,7 @@ class LoginActivity : AppCompatActivity() {
                     val db = FirebaseFirestore.getInstance()
 
                     db.collection("users").document(email)
+
                         .get()
                         .addOnSuccessListener { doc ->
                             val hasFarmName = doc.contains("farmName") && !doc.getString("farmName").isNullOrEmpty()
